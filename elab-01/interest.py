@@ -1,0 +1,5 @@
+p = float(input("Input principal amount (P): "))
+r = float(input("Input annual nominal interest rate (r): "))
+n = int(input("Input # of times the interest is compounded per year (n): "))
+t = int(input("Input # of years (t): "))
+print(f"Final amount: {p*(1+r/n)**(n*t):.2f}")
