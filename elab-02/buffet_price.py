@@ -1,14 +1,17 @@
-m = int(input("How long have Buzz played ?: "))
+food_type = ["Korean", "Japanese"]
+choice = input("Enter your buffet choice: ")
 
-hour = m // 60
-
-if m % 60 > 20:
-    hour += 1
-price = hour*900
-
-if (4 > hour >= 2):
-    price = hour*900*0.9
-elif hour == 4:
-    price = hour*900*0.8
-elif hour >= 5:
-    price = hour*900*0.7
+if choice in food_type:
+    is_wed = input("Is today Wednesday (yes/no)? ")
+    if is_wed == "yes":
+        if (choice == "Korean"):
+            print("Your payment is 1275.00 Baht.")
+        elif (choice == "Japanese"):
+            print("Your payment is 850.00 Baht.")
+    elif is_wed == "no":
+        if (choice == "Korean"):
+            print("Your payment is 1500.00 Baht.")
+        elif (choice == "Japanese"):
+            print("Your payment is 1000.00 Baht.")
+else:
+    print(f"Sorry, there is no {choice} buffet.")

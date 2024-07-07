@@ -1,14 +1,11 @@
-m = int(input("How long have Buzz played ?: "))
+number = float(input("Enter your guess (0 - 100): "))
 
-hour = m // 60
-
-if m % 60 > 20:
-    hour += 1
-price = hour*900
-
-if (4 > hour >= 2):
-    price = hour*900*0.9
-elif hour == 4:
-    price = hour*900*0.8
-elif hour >= 5:
-    price = hour*900*0.7
+if number > 100 or number < 0:
+    print("Sorry, out of range, try again later.")
+elif number == target:
+    print("Congratulations, your guess is correct.")
+elif number != target:
+    if (number > target):
+        print("Sorry, your guess is too high, try again later.")
+    else:
+        print("Sorry, your guess is too low, try again later.")

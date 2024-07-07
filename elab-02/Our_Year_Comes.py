@@ -1,14 +1,18 @@
-m = int(input("How long have Buzz played ?: "))
+Man_res = input("What's the result of Manchester city's match? ")
+liver_res = input("What's the result of Liverpool's match? ")
 
-hour = m // 60
-
-if m % 60 > 20:
-    hour += 1
-price = hour*900
-
-if (4 > hour >= 2):
-    price = hour*900*0.9
-elif hour == 4:
-    price = hour*900*0.8
-elif hour >= 5:
-    price = hour*900*0.7
+if (Man_res == "won" and liver_res == "lost"):
+    print("Manchester city is the champion of Premier League.")
+elif (Man_res == "lost" and liver_res == "won"):
+    print("Liverpool's is the champion of Premier League.")
+elif (Man_res == "won" and liver_res == "won"):
+    man_won = int(input("What is the margin that Manchester city won by? "))
+    liver_won = int(input("What is the margin that Liverpool won by? "))
+    if (man_won > liver_won):
+        print("Manchester city is the champion of Premier League.")
+    elif (man_won < liver_won):
+        print("Liverpool is the champion of Premier League.")
+    elif (man_won == liver_won):
+        win = input(
+            "Which team won the play-off match?(Manchester city/Liverpool) ")
+        print(f"{win} is the champion of Premier League.")

@@ -1,14 +1,18 @@
-m = int(input("How long have Buzz played ?: "))
+chars = ["a", "b", "c", "d", "e"]
+numbers = []
 
-hour = m // 60
 
-if m % 60 > 20:
-    hour += 1
-price = hour*900
+def sd(arr, mean):
+    sum_square = 0
+    for i in arr:
+        sum_square += (i-mean)**2
+    return (sum_square/len(arr))**(1/2)
 
-if (4 > hour >= 2):
-    price = hour*900*0.9
-elif hour == 4:
-    price = hour*900*0.8
-elif hour >= 5:
-    price = hour*900*0.7
+
+for char in chars:
+    numbers.append(float(input(f"Input {char}: ")))
+
+mean = f"{sum(numbers)/len(numbers):.3f}"
+
+print(f"mean: {mean}")
+print(f"sd: {sd(numbers,float(mean)):.3f}")
